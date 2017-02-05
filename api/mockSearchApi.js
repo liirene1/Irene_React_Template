@@ -26,6 +26,18 @@ class ItemsApi {
       }, 100);
     });
   }
+
+  static deleteItem(itemId) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const indexToDelete = items.findIndex(item => {
+          item.id == itemId;
+        });
+        items.splice(indexToDelete, 1);
+        resolve({id: itemId});
+      }, 100);
+    });
+  }
 }
 
 export default ItemsApi;

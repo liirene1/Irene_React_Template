@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ItemForm from './Search/ItemForm';
 
 class Main extends Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class Main extends Component {
 
   render() {
     return (
-      <h1>MAIN</h1>
+      <div>
+        <h1>Add Items</h1>
+        <ItemForm />
+      </div>  
     );
   }
 };

@@ -14,6 +14,13 @@ class SearchPage extends React.Component {
     this.props.actions.loadItems();
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log("component will receive props", this.props.items, nextProps.items);
+    //if(this.props.items !== nextProps.items) {
+      //this.props.actions.loadItems();
+    //}
+  }
+
   render() {
     console.log(this.props.items);
     const {items} = this.props;
@@ -32,9 +39,7 @@ SearchPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  return {
-    items: state.items
-  };
+  return state.items;
 }
 
 function mapDispatchToProps(dispatch) {
