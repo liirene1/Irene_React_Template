@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import { reduxForm } from 'redux-form';
-import * as itemActions from '../../actions/itemActions';
+import * as itemActions from '../../actions/itemActionsNoAPI';
 
 class ItemForm extends React.Component {
   handleFormSubmit(formProps) {

@@ -11,21 +11,17 @@ export default function itemReducer(state=initialState, action) {
       return Object.assign({}, state, {items: action.items});
 
     case types.ADD_ITEM_SUCCESS:
-      //browserHistory.push(`/search`);
       const newState = Object.assign({}, state);
-      newState.push(action.item);
+      newState.items.push(action.item);
       console.log(newState);
       return newState;
 
     case types.DELETE_ITEM_SUCCESS:
-      newState = Object.assign({}, state);
-      const indexToDelete = state.items.findIndex(function(item) {
-        return item.id == action.id;
+      const items = state.items.filter(function(item) {
+        return item.id !== action.id;
       });
-      newState.items.splice(indexToDelete, 1);
-      console.log("new statein reducer", newState);
-      //browserHistory.push('/search');
-      return newState;
+      console.log("new items state in reducer", items);
+      return Object.assign({}, state, {items});
 
     case types.EDIT_ITEM_SUCCESS:
       newState = Object.assign({}, state);
