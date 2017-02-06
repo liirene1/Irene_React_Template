@@ -11,7 +11,7 @@ class Main extends Component {
       <div>
         <h1>Add Items</h1>
         <ItemForm />
-      </div>  
+      </div>
     );
   }
 };

@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { Button, Icon, Modal } from 'react-materialize';
 
-import * as itemActions from '../../actions/itemActions';
-import {loadItems} from '../../actions/itemActions';
+import * as itemActions from '../../actions/itemActionsNoAPI';
 import EditForm from './EditForm';
 
 class ItemListing extends React.Component {
@@ -15,8 +14,8 @@ class ItemListing extends React.Component {
   }
 
   onDelete(event) {
-    console.log("delete button", this.props.item.id);
-    this.props.actions.deleteItem(this.props.item.id);
+    console.log("delete button", this.props.item);
+    this.props.actions.deleteItem(this.props.item);
   }
 
   render() {
@@ -31,7 +30,6 @@ class ItemListing extends React.Component {
             trigger={
               <Button><Icon left>edit</Icon>EDIT</Button>
             }>
-            <EditForm item={this.props.item}/>
           </Modal>
       </div>
     );

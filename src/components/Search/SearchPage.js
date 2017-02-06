@@ -1,9 +1,8 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as itemActions from '../../actions/itemActions';
+import * as itemActions from '../../actions/itemActionsNoAPI';
 import Search from './index';
-import {loadItems} from '../../actions/itemActions';
 
 class SearchPage extends React.Component {
   constructor(props, context) {
