@@ -27,5 +27,8 @@ module.exports = {
       "plugin:react/recommended",
       "plugin:import/errors",
       "plugin:import/warnings"
-    ]
+    ],
+    "env": {
+      "browser": true
+    }
 };

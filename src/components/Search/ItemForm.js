@@ -26,17 +26,17 @@ class ItemForm extends React.Component {
       <div>
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <fieldset className='form-group'>
-            <label for='name'>Name</label>
+            <label htmlFor='name'>Name</label>
             <input {...name} type='text' className='form-control' id='name' />
             {name.touched && name.error && <div className='error'>{name.error}</div>}
           </fieldset>
           <fieldset className='form-group'>
-            <label for='size'>Party Size</label>
+            <label htmlFor='size'>Party Size</label>
             <input {...size} type='number' min='1' max='20' className='form-control' id='size' />
             {size.touched && size.error && <div className='error'>{size.error}</div>}
           </fieldset>
           <fieldset className='form-group'>
-            <label for='phone'>Phone Number</label>
+            <label htmlFor='phone'>Phone Number</label>
             <input {...phone} type='tel' className='form-control' id='phone' />
             {phone.touched && phone.error && <div className='error'>{phone.error}</div>}
           </fieldset>

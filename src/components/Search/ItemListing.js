@@ -44,7 +44,7 @@ class ItemListing extends React.Component {
       </div>
     )
   }
-};
+}
 
 ItemListing.propTypes = {
   item: PropTypes.object.isRequired

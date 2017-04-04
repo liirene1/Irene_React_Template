@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React from 'react'
 import { reduxForm } from 'redux-form'
 import * as itemActions from '../../actions/itemActions'
 
@@ -42,15 +42,15 @@ class EditForm extends React.Component {
       <div>
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <fieldset className='form-group'>
-            <label for='name'>Name</label>
+            <label htmlFor='name'>Name</label>
             <input {...name} type='text' className='form-control' id='name' placeholder={this.props.item.name} />
           </fieldset>
           <fieldset className='form-group'>
-            <label for='size'>Size of Party</label>
+            <label htmlFor='size'>Size of Party</label>
             <input {...size} type='text' className='form-control' id='size' placeholder={this.props.item.size} />
           </fieldset>
           <fieldset className='form-group'>
-            <label for='phone'>Phone Number</label>
+            <label htmlFor='phone'>Phone Number</label>
             <input {...phone} type='text' className='form-control' id='phone' placeholder={this.props.item.phone} />
           </fieldset>
           {this.renderAlert()}

@@ -6,7 +6,7 @@ export function addItem (item) {
       dispatch({ type: types.ADD_ITEM_SUCCESS, item })
     })
   }
-};
+}
 
 export function deleteItem (item) {
   return function (dispatch) {
@@ -14,7 +14,7 @@ export function deleteItem (item) {
       dispatch({ type: types.DELETE_ITEM_SUCCESS, id: item.id })
     })
   }
-};
+}
 
 export function loadItems () {
   return function (dispatch) {
@@ -37,4 +37,4 @@ export function loadItems () {
       })
     })
   }
-};
+}

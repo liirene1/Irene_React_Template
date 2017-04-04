@@ -6,9 +6,9 @@ import * as itemActions from '../../actions/itemActions'
 import Search from './index'
 
 class SearchPage extends React.Component {
-  constructor (props, context) {
-    super(props, context)
-  }
+  // constructor (props, context) {
+  //   super(props, context)
+  // }
 
   componentWillMount () {
     this.props.actions.loadItems()

@@ -38,7 +38,7 @@ export function addItem ({ name, size, phone }) {
       throw (error)
     })
   }
-};
+}
 
 export function deleteItemSuccess (id) {
   return { type: types.DELETE_ITEM_SUCCESS, id }
@@ -81,7 +81,7 @@ export function editItem (item) {
 export function textNumber (item) {
   fetch(`http://localhost:8000/textsms/${item.phone}`)
   .then(function (response) {
-    console.log('Text sent', response)
+    console.log('Text sent', response) // Unblocking error: Actions must be plain objects. Use custom middleware for async actions.
   })
   .catch(error => {
     throw (error)

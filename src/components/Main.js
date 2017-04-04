@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import ItemForm from './Search/ItemForm'
 
 class Main extends Component {
-  constructor (props) {
-    super(props)
-  }
+  // constructor (props) {
+  //   super(props)
+  // }
 
   render () {
     return (
@@ -14,6 +14,6 @@ class Main extends Component {
       </div>
     )
   }
-};
+}
 
 export default Main

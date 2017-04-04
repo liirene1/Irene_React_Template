@@ -14,9 +14,9 @@ const items = [
 ]
 
 // This would be performed on the server in a real app. Just stubbing in.
-const generateId = (items) => {
-  return items.length
-}
+// const generateId = (items) => {
+//   return items.length
+// }
 
 class ItemsApi {
   static getAllItems (start, end) {
@@ -30,9 +30,9 @@ class ItemsApi {
   static deleteItem (itemId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const indexToDelete = items.findIndex(item => {
-          item.id == itemId
-        })
+        const indexToDelete = items.findIndex(item =>
+          item.id === itemId
+        )
         items.splice(indexToDelete, 1)
         resolve({id: itemId})
       }, 100)

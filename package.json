@@ -9,6 +9,9 @@
     "serve": "webpack-dev-server",
     "lint": "standard --fix && eslint --fix ./src/**"
   },
+  "standard": {
+    "globals": [ "fetch" ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
