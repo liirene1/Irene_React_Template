@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import Header from './Header'
 
 const Home = ({ children }) => {
@@ -8,6 +8,10 @@ const Home = ({ children }) => {
       {children}
     </div>
   )
+}
+
+Home.propTypes = {
+  children: PropTypes.array.isRequired
 }
 
 export default Home

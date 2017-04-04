@@ -15,13 +15,11 @@ class ItemListing extends React.Component {
     this.onText = this.onText.bind(this)
   }
 
-  onDelete (event) {
-    console.log('delete button', this.props.item)
+  onDelete () { // (event)
     this.props.actions.deleteItem(this.props.item.id)
   }
 
   onText () {
-    console.log('Text this phone number')
     this.props.actions.textNumber(this.props.item)
   }
 
@@ -47,10 +45,11 @@ class ItemListing extends React.Component {
 }
 
 ItemListing.propTypes = {
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
-function mapStateToProps (state, ownProps) {
+function mapStateToProps (state) {
   return {
     items: state.items
   }

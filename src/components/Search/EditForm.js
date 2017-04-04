@@ -4,8 +4,6 @@ import * as itemActions from '../../actions/itemActions'
 
 class EditForm extends React.Component {
   handleFormSubmit (formProps) {
-    console.log('handleFormSubmit', formProps, this.props.item)
-
     // if user wants pre-populated values
     if (!formProps.name) {
       formProps.name = this.props.item.name
@@ -20,7 +18,6 @@ class EditForm extends React.Component {
     }
 
     const itemToEdit = Object.assign({}, formProps, {id: this.props.item.id})
-    console.log(itemToEdit)
     this.props.editItem(itemToEdit)
   }
 

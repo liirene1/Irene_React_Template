@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import ItemListing from './ItemListing'
 
 const Search = ({items}) => {
@@ -10,6 +10,10 @@ const Search = ({items}) => {
         )}
     </div>
   )
+}
+
+Search.propTypes = {
+  items: PropTypes.array.isRequired
 }
 
 export default Search

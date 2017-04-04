@@ -9,7 +9,6 @@ export function loadItems () {
     fetch(`http://localhost:8000/parties/`)
     .then(response => response.json())
     .then(items => {
-      console.log(items)
       dispatch(loadItemsSuccess(items))
     }).catch(error => {
       throw (error)
@@ -51,7 +50,6 @@ export function deleteItem (id) {
     })
     .then(response => response.json())
     .then(json => {
-      console.log('id in json in actions', id)
       dispatch(deleteItemSuccess(id))
     }).catch(error => {
       throw (error)

@@ -5,7 +5,6 @@ import * as itemActions from '../../actions/itemActions'
 
 class ItemForm extends React.Component {
   handleFormSubmit (formProps) {
-    console.log('handleFormSubmit', formProps)
     this.props.addItem(formProps)
   }
 
