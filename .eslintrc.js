@@ -3,7 +3,8 @@ module.exports = {
     "plugins": [
         "standard",
         "promise",
-        "react"
+        "react",
+        "html"
     ],
     "settings": {
       "react": {

@@ -14,15 +14,14 @@ class SearchPage extends React.Component {
     this.props.actions.loadItems()
   }
 
-  componentWillReceiveProps (nextProps) {
-    console.log('component will receive props', this.props.items, nextProps.items)
+  // componentWillReceiveProps (nextProps) {
+    // console.log('component will receive props', this.props.items, nextProps.items)
     // if(this.props.items !== nextProps.items) {
       // this.props.actions.loadItems();
     // }
-  }
+  // }
 
   render () {
-    console.log(this.props.items)
     const {items} = this.props
 
     if (items === undefined || items.length < 1) return null
@@ -36,12 +35,11 @@ class SearchPage extends React.Component {
  }
 
 SearchPage.propTypes = {
-  // items: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 }
 
-function mapStateToProps (state, ownProps) {
-  console.log('map state in search page', state)
+function mapStateToProps (state) { // (state, ownProps)
   return {items: state.items}
 }
 

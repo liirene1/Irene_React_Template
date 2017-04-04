@@ -10,7 +10,9 @@
     "lint": "standard --fix && eslint --fix ./src/**"
   },
   "standard": {
-    "globals": [ "fetch" ]
+    "globals": [
+      "fetch"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +39,7 @@
     "eslint": "^3.19.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.3",

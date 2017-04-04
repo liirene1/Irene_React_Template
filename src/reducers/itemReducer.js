@@ -8,7 +8,6 @@ let initialState = {
 export default function itemReducer (state = initialState.items, action) {
   switch (action.type) {
     case types.LOAD_ITEMS_SUCCESS:
-      console.log('triggered load', action.items)
       return action.items
 
     case types.ADD_ITEM_SUCCESS:
@@ -18,7 +17,6 @@ export default function itemReducer (state = initialState.items, action) {
       ]
 
     case types.DELETE_ITEM_SUCCESS:
-      console.log('delete reducer', action.id)
       return state.filter(item => item.id !== action.id)
 
     default:
