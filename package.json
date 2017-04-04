@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "build": "npm run clean && webpack",
     "serve": "webpack-dev-server",
-    "test": "standard --fix"
+    "lint": "standard --fix && eslint --fix ./src/**"
   },
   "author": "",
   "license": "ISC",
@@ -26,10 +26,18 @@
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
+    "babel-eslint": "^7.2.1",
     "babel-loader": "^6.2.0",
     "babel-preset-env": "^1.1.4",
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-standard": "^2.1.1",
     "html-webpack-plugin": "^2.26.0",
     "rimraf": "^2.5.4",
     "standard": "^9.0.2",
