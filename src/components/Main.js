@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import ItemForm from './Search/ItemForm';
+import React, { Component } from 'react'
+import ItemForm from './Search/ItemForm'
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
+  render () {
     return (
       <div>
-        <h1>Add Items</h1>
+        <h1>Add My Party</h1>
         <ItemForm />
       </div>
-    );
+    )
   }
 };
 
-export default Main;
+export default Main

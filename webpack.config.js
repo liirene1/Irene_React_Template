@@ -1,19 +1,19 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack')
+var path = require('path')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const VENDOR_LIBS = [
-  "faker",
-  "lodash",
-  "react",
-  "react-dom",
-  "react-input-range",
-  "react-redux",
-  "react-router",
-  "redux",
-  "redux-form",
-  "redux-thunk"
-];
+  'faker',
+  'lodash',
+  'react',
+  'react-dom',
+  'react-input-range',
+  'react-redux',
+  'react-router',
+  'redux',
+  'redux-form',
+  'redux-thunk'
+]
 
 module.exports = {
   entry: {
@@ -39,10 +39,10 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor','manifest']
+      names: ['vendor', 'manifest']
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
   ]
-};
+}

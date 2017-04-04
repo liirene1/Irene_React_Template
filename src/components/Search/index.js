@@ -1,15 +1,15 @@
-import React from 'react';
-import ItemListing from './ItemListing';
+import React from 'react'
+import ItemListing from './ItemListing'
 
 const Search = ({items}) => {
-    return (
-      <div>
-        Items
-        {items.map(item =>
-          <ItemListing key={item.id} item={item} />
+  return (
+    <div>
+      <h2>Waitlist</h2>
+      {items.map(item =>
+        <ItemListing key={item.id} item={item} />
         )}
-      </div>
-    )
-};
+    </div>
+  )
+}
 
-export default Search;
+export default Search

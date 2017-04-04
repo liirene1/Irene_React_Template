@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && webpack",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "test": "standard --fix"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +32,7 @@
     "css-loader": "^0.26.1",
     "html-webpack-plugin": "^2.26.0",
     "rimraf": "^2.5.4",
+    "standard": "^9.0.2",
     "style-loader": "^0.13.1",
     "webpack": "2.2.0-rc.0",
     "webpack-dev-server": "^2.2.0-rc.0"

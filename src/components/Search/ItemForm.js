@@ -1,69 +1,79 @@
-import React, {PropTypes} from 'react';
-import { reduxForm } from 'redux-form';
-import * as itemActions from '../../actions/itemActionsNoAPI';
+import React from 'react'
+import { reduxForm } from 'redux-form'
+// import * as itemActions from '../../actions/itemActionsNoAPI';
+import * as itemActions from '../../actions/itemActions'
 
 class ItemForm extends React.Component {
-  handleFormSubmit(formProps) {
-    console.log("handleFormSubmit", formProps);
-    this.props.addItem(formProps);
+  handleFormSubmit (formProps) {
+    console.log('handleFormSubmit', formProps)
+    this.props.addItem(formProps)
   }
 
-  renderAlert() {
-    if(this.props.errorMessage) {
+  renderAlert () {
+    if (this.props.errorMessage) {
       return (
-        <div className="alert alert-danger">
+        <div className='alert alert-danger'>
           <strong> Oops! </strong> {this.props.errorMessage}
         </div>
-      );
+      )
     }
   }
 
-  render() {
-    const { handleSubmit, fields: { name, color }} = this.props;
+  render () {
+    const { handleSubmit, fields: { name, size, phone } } = this.props
 
     return (
       <div>
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          <fieldset className="form-group">
-            <label for="name">Name</label>
-            <input {...name} type="text" className="form-control" id="name" />
-            {name.touched && name.error && <div className="error">{name.error}</div>}
+          <fieldset className='form-group'>
+            <label for='name'>Name</label>
+            <input {...name} type='text' className='form-control' id='name' />
+            {name.touched && name.error && <div className='error'>{name.error}</div>}
           </fieldset>
-          <fieldset className="form-group">
-            <label for="color">Color</label>
-            <input {...color} type="text" className="form-control" id="color" />
-            {color.touched && color.error && <div className="error">{color.error}</div>}
+          <fieldset className='form-group'>
+            <label for='size'>Party Size</label>
+            <input {...size} type='number' min='1' max='20' className='form-control' id='size' />
+            {size.touched && size.error && <div className='error'>{size.error}</div>}
+          </fieldset>
+          <fieldset className='form-group'>
+            <label for='phone'>Phone Number</label>
+            <input {...phone} type='tel' className='form-control' id='phone' />
+            {phone.touched && phone.error && <div className='error'>{phone.error}</div>}
           </fieldset>
           {this.renderAlert()}
-          <button action="submit" className="btn btn-primary">Submit</button>
+          <button action='submit' className='btn btn-primary'>Submit</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-function validate(formProps) {
-  const errors = {};
+function validate (formProps) {
+  const errors = {}
 
-  //redux form will validate anytime the form changes
   if (!formProps.name) {
-    errors.name = 'Please enter the name';
+    errors.name = 'Please enter your name'
   }
 
-  if (!formProps.color) {
-    errors.color = 'Please enter the color';
+  if (!formProps.size) {
+    errors.size = 'Please enter your party size'
   }
 
-  return errors;
+  var phoneno = /^\d{10}$/
+  if (!formProps.phone || !formProps.phone.match(phoneno)) {
+    errors.phone = 'Please enter a valid phone number'
+  }
+
+  return errors
 }
 
-function mapStateToProps(state) {
-  console.log(state);
-  //return { errorMessage: state.auth.error };
+function mapStateToProps (state) {
+  console.log(state)
+  // return { errorMessage: state.auth.error };
 }
 
 export default reduxForm({
   form: 'add',
-  fields: ['name', 'color'],
+  fields: ['name', 'size', 'phone'],
   validate
-}, mapStateToProps, itemActions)(ItemForm);
+}, mapStateToProps, itemActions)(ItemForm)

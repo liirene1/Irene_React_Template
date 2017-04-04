@@ -1,36 +1,40 @@
-import * as types from './types';
+import * as types from './types'
 
-export function addItem(item) {
-  return function(dispatch) {
+export function addItem (item) {
+  return function (dispatch) {
     return Promise.resolve().then(() => {
-      dispatch({ type: types.ADD_ITEM_SUCCESS, item });
+      dispatch({ type: types.ADD_ITEM_SUCCESS, item })
     })
-  };
+  }
 };
 
-export function deleteItem(item) {
-  return function(dispatch) {
+export function deleteItem (item) {
+  return function (dispatch) {
     return Promise.resolve().then(() => {
-      dispatch({ type: types.DELETE_ITEM_SUCCESS, id: item.id });
+      dispatch({ type: types.DELETE_ITEM_SUCCESS, id: item.id })
     })
-  };
+  }
 };
 
-export function loadItems() {
-  return function(dispatch) {
+export function loadItems () {
+  return function (dispatch) {
     return Promise.resolve().then(() => {
       dispatch({
         type: types.LOAD_ITEMS_SUCCESS,
         items: [{
           id: 1,
-          name: 'name 1',
-          color: 'color 1'
+          name: 'Irene',
+          size: '1',
+          phone: '7181234580',
+          timeReserved: '4:40'
         }, {
           id: 2,
-          name: 'name 2',
-          color: 'color 2'
+          name: 'Tim',
+          size: '2',
+          phone: '3470295029',
+          timeReserved: '5:59'
         }]
-      });
+      })
     })
-  };
+  }
 };
